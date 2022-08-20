@@ -1,0 +1,33 @@
+﻿@using MvcStockTracking.Models.Entity;
+@model List<TBLMUSTERI>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayoutView.cshtml";
+}
+
+<table class="table table-hover">
+    <tr>
+        <th>MÜŞTERİ ID</th>
+        <th>MÜŞTERİ ADI</th>
+        <th>MÜŞTERİ SOYADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+
+    </tr>
+    <tbody>
+        @foreach (var mst in Model)
+        {
+            <tr>
+                <th>@mst.MUSTERIID</th>
+                <td>@mst.MUSTERIAD</td>
+                <td>@mst.MUSTERISOYAD</td>
+                <td><a href="~/Musteri/SIL/@mst.MUSTERIID" class="btn btn-danger">SİL</a></td>
+                <td><a href="~/Musteri/GUNCELLE/@mst.MUSTERIID" class="btn btn-success">GÜNCELLE</a></td>
+
+            </tr>
+
+        }
+    </tbody>
+</table>
+<a href="~/Musteri/YeniMusteri/" class="btn btn-primary">YENİ MÜŞTERİ EKLE</a>
+

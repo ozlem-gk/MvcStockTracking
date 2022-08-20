@@ -131,6 +131,8 @@
     <Compile Include="Controllers\DefaultController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KategoryController.cs" />
+    <Compile Include="Controllers\MusteriController.cs" />
+    <Compile Include="Controllers\UrunController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -246,6 +248,11 @@
     <Content Include="web\webfonts\fa-solid-900.woff2" />
     <Content Include="Views\Shared\_MainLayoutView.cshtml" />
     <Content Include="Views\Kategory\Index.cshtml" />
+    <Content Include="Views\Urun\Index.cshtml" />
+    <Content Include="Views\Musteri\Index.cshtml" />
+    <Content Include="Views\Kategory\YeniKategori.cshtml" />
+    <Content Include="Views\Musteri\YeniMusteri.cshtml" />
+    <Content Include="Views\Urun\YeniUrun.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

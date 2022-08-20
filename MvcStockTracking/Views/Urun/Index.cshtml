@@ -1,0 +1,36 @@
+﻿@using MvcStockTracking.Models.Entity;
+@model List<TBLURUN>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayoutView.cshtml";
+}
+
+<table class="table table-hover">
+    <tr>
+        <th>ÜRÜN ID</th>
+        <th>ÜRÜN ADI</th>
+        <th>ÜRÜN KATEGORİSİ</th>
+        <th>ÜRÜN FİYAT</th>
+        <th>ÜRÜN MARKA</th>
+        <th>ÜRÜN STOĞU</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    <tbody>
+        @foreach (var urn in Model)
+        {
+            <tr>
+                <th>@urn.URUNID</th>
+                <td>@urn.URUNADI</td>
+                <td>@urn.URUNKATEGORI</td>
+                <td>@urn.FIYAT</td>
+                <td>@urn.MARKA</td>
+                <td>@urn.STOK</td>
+                <td><a href="~/Urun/SIL/@urn.URUNID" class="btn btn-danger">SİL</a></td>
+                <td><a href="~/Urun/GUNCELLE/@urn.URUNID" class="btn btn-success">GÜNCELLE</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="~/Urun/YeniUrun/" class="btn btn-primary">YENİ ÜRÜN EKLE</a>
+

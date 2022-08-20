@@ -7,25 +7,23 @@ using MvcStockTracking.Models.Entity;
 
 namespace MvcStockTracking.Controllers
 {
-    public class KategoryController : Controller
+    public class UrunController : Controller
     {
-        // GET: Kategory
+        // GET: Urun
         MvcDbStockEntities db = new MvcDbStockEntities();
         public ActionResult Index()
         {
-            var degerler = db.TBLKATEGORI.ToList();
+            var degerler = db.TBLURUN.ToList();
             return View(degerler);
         }
         [HttpGet]
-        public ActionResult YeniKategori()
+        public ActionResult YeniUrun()
         {
             return View();
         }
-
-        [HttpPost]
-        public ActionResult YeniKategori(TBLKATEGORI p1)
+        public ActionResult YeniUrun(TBLURUN p1)
         {
-            db.TBLKATEGORI.Add(p1);
+            db.TBLURUN.Add(p1);
             db.SaveChanges();
             return View();
         }

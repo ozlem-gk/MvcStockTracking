@@ -1,8 +1,28 @@
-﻿
+﻿@using MvcStockTracking.Models.Entity;
+@model List<TBLKATEGORI>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayoutView.cshtml";
 }
 
-<h2>Kategoriler listelenecek</h2>
+<table class="table table-hover">
+    <tr>
+        <th>KATEGORİ ID</th>
+        <th>KATEGORİ ADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    <tbody>
+        @foreach(var ktgr in Model)
+            {
+                <tr>
+                    <th>@ktgr.KATEGORIID</th>
+                    <td>@ktgr.KATEGORIAD</td>
+                    <td><a href="~/Kategory/SIL/@ktgr.KATEGORIID" class="btn btn-danger">SİL</a></td>
+                    <td><a href="~/Kategory/GUNCELLE/@ktgr.KATEGORIID" class="btn btn-success">GÜNCELLE</a></td>
+                </tr>
 
+            }
+    </tbody>
+</table>
+<a href="~/Kategory/YENIKATEGORI/" class="btn btn-primary">YENİ KATEGORİ EKLE</a>

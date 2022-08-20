@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MvcStockTracking.Models.Entity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -7,27 +8,27 @@ using MvcStockTracking.Models.Entity;
 
 namespace MvcStockTracking.Controllers
 {
-    public class KategoryController : Controller
+    public class MusteriController : Controller
     {
-        // GET: Kategory
+        // GET: Musteri
         MvcDbStockEntities db = new MvcDbStockEntities();
         public ActionResult Index()
         {
-            var degerler = db.TBLKATEGORI.ToList();
+            var degerler = db.TBLMUSTERI.ToList();
             return View(degerler);
         }
         [HttpGet]
-        public ActionResult YeniKategori()
+        public ActionResult YeniMusteri()
         {
-            return View();
+            return View(); 
         }
-
         [HttpPost]
-        public ActionResult YeniKategori(TBLKATEGORI p1)
+        public ActionResult YeniMusteri(TBLMUSTERI p1)
         {
-            db.TBLKATEGORI.Add(p1);
+            db.TBLMUSTERI.Add(p1);
             db.SaveChanges();
             return View();
         }
+
     }
 }
