@@ -27,7 +27,7 @@ namespace MvcStockTracking.Controllers
         {
             db.TBLMUSTERI.Add(p1);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
         }
 
     }

@@ -1,4 +1,4 @@
-﻿
+﻿@model MvcStockTracking.Models.Entity.TBLURUN
 @{
     ViewBag.Title = "UrunEkle";
     Layout = "~/Views/Shared/_MainLayoutView.cshtml";
@@ -11,7 +11,7 @@
     </div>
     <div>
         <label>Ürün Kategori</label>
-        <input type="text" class="form-control" name="URUNKATEGORI" />
+        @Html.DropDownListFor(m=>m.TBLKATEGORI.KATEGORIID,(List<SelectListItem>)ViewBag.dgr, new {@class="form-control"})
     </div>
     <div>
         <label>Ürün Fiyat</label>

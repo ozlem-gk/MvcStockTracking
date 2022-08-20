@@ -27,7 +27,14 @@ namespace MvcStockTracking.Controllers
         {
             db.TBLKATEGORI.Add(p1);
             db.SaveChanges();
-            return View();
+            return RedirectToAction("Index");
+        }
+        public ActionResult SIL(int id)
+        {
+            var kategori = db.TBLKATEGORI.Find(id);
+            db.TBLKATEGORI.Remove(kategori);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
     }
 }
