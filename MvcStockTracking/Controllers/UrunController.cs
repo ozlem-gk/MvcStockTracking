@@ -37,5 +37,13 @@ namespace MvcStockTracking.Controllers
             //return View();
             return RedirectToAction("Index");
         }
+        public ActionResult SIL(int id)
+        {
+            var urun = db.TBLURUN.Find(id);
+            db.TBLURUN.Remove(urun);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
     }
 }

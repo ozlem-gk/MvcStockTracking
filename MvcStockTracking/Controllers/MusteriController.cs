@@ -29,6 +29,13 @@ namespace MvcStockTracking.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        public ActionResult SIL(int id)
+        {
+            var musteri = db.TBLMUSTERI.Find(id);
+            db.TBLMUSTERI.Remove(musteri);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
 
     }
 }
